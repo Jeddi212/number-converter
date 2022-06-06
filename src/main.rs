@@ -1,4 +1,7 @@
-use number_converter::util::user_input;
+mod util;
+
+use crate::util::user_input;
+
 fn main() {
     let mut input: String = String::new();
     user_input::read(&mut input);
