@@ -64,9 +64,7 @@ pub fn bin_to_dec(source: String) -> String {
 }
 
 pub fn bin_to_oct(source: String) -> String {
-    let mut temp: String = String::new();
-
-    temp
+    dec_to_oct(bin_to_dec(source).trim().parse::<i32>().expect("Can't convert binary to octal ::: argument is NaN for dec_to_oct function") )
 }
 
 pub fn bin_to_hex(source: String) -> String {
