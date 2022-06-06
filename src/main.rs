@@ -1,3 +1,6 @@
+use number_converter::util::user_input;
 fn main() {
-    println!("Hello, world!");
+    let mut input: String = String::new();
+    user_input::read(&mut input);
+    println!("Hello, world! {}", &input);
 }
