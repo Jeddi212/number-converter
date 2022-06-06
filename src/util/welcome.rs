@@ -9,7 +9,7 @@ pub fn greet(user_choose: &mut String) {
     octal_option();
     hexa_option();
 
-    print!("~> ");
+    print!("~>  ");
     user_input::read(user_choose);
 }
 
