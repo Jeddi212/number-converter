@@ -1,3 +1,5 @@
+use crate::util::user_input::{str_to_i32};
+
 pub fn dec_to_bin(source: i32) -> String {
     let mut n = source;
     let mut temp: String = String::new();
@@ -64,7 +66,7 @@ pub fn bin_to_dec(source: String) -> String {
 }
 
 pub fn bin_to_oct(source: String) -> String {
-    dec_to_oct(bin_to_dec(source).trim().parse::<i32>().expect("Can't convert binary to octal ::: argument is NaN for dec_to_oct function") )
+    dec_to_oct(str_to_i32(bin_to_dec(source)))
 }
 
 pub fn bin_to_hex(source: String) -> String {
