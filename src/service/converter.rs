@@ -1,6 +1,7 @@
 pub fn dec_to_bin(source: i32) -> String {
     let mut n = source;
     let mut temp: String = String::new();
+    
     while n > 0 {
         if n % 2 != 0 {
             temp.push('1');
@@ -10,6 +11,7 @@ pub fn dec_to_bin(source: i32) -> String {
 
         n /= 2;
     }
+
     temp.chars().rev().collect::<String>()
 }
 
@@ -30,9 +32,19 @@ pub fn dec_to_oct(source: i32) -> String {
 }
 
 pub fn dec_to_hex(source: i32) -> String {
+    let mut n = source;
     let mut temp: String = String::new();
+    
+    if source == 0 {
+        temp.push('0');
+    }
 
-    temp
+    while n > 0 {
+        temp.push(get_hex(n % 16));
+        n /= 16;
+    }
+
+    temp.chars().rev().collect::<String>()
 }
 
 pub fn bin_to_dec(source: String) -> String {
@@ -87,4 +99,26 @@ pub fn hex_to_oct(source: String) -> String {
     let mut temp: String = String::new();
 
     temp
+}
+
+fn get_hex(number: i32) -> char {
+    match number {
+        0  => '0',
+        1  => '1',
+        2  => '2',
+        3  => '3',
+        4  => '4',
+        5  => '5',
+        6  => '6',
+        7  => '7',
+        8  => '8',
+        9  => '9',
+        10 => 'A',
+        11 => 'B',
+        12 => 'C',
+        13 => 'D',
+        14 => 'E',
+        15 => 'F',
+        _ => 'x'
+    }
 }
