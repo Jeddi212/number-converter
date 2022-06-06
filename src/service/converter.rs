@@ -1,4 +1,4 @@
-use crate::util::user_input::{str_to_i32};
+use crate::util::user_input::{str_to_i32, chr_to_i32};
 
 pub fn dec_to_bin(source: i32) -> String {
     let mut n = source;
@@ -73,19 +73,27 @@ pub fn bin_to_hex(source: String) -> String {
     dec_to_hex(str_to_i32(bin_to_dec(source)))
 }
 
-pub fn oct_to_dec(source: i32) -> String {
+pub fn oct_to_dec(source: String) -> String {
+    let mut n: String = source.clone();
+    let mut i: u32 = 0;
+    let mut temp: i32 = 0;
+    
+    while n.len() > 0 {
+        let current = n.pop().expect("String can't pop(ed)");
+        temp += chr_to_i32(current) * i32::pow(8, i);
+        i += 1;
+    }
+    
+    temp.to_string()
+}
+
+pub fn oct_to_bin(source: String) -> String {
     let mut temp: String = String::new();
 
     temp
 }
 
-pub fn oct_to_bin(source: i32) -> String {
-    let mut temp: String = String::new();
-
-    temp
-}
-
-pub fn oct_to_hex(source: i32) -> String {
+pub fn oct_to_hex(source: String) -> String {
     let mut temp: String = String::new();
 
     temp
