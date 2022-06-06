@@ -6,7 +6,7 @@ pub fn greet(user_choose: &mut String) {
     
     decimal_option();
     biner_option();
-    oktal_option();
+    octal_option();
     hexa_option();
 
     print!("~> ");
@@ -17,7 +17,7 @@ fn decimal_option() {
     print!(
         "
          1. Decimal --> Biner
-         2. Decimal --> Oktal
+         2. Decimal --> Octal
          3. Decimal --> Hexa
         "
     );
@@ -27,18 +27,18 @@ fn biner_option() {
     print!(
         "
          4. Biner   --> Decimal
-         5. Biner   --> Oktal
+         5. Biner   --> Octal
          6. Biner   --> Hexa
         "
     )
 }
 
-fn oktal_option() {
+fn octal_option() {
     print!(
         "
-         7. Oktal   --> Decimal
-         8. Oktal   --> Biner
-         9. Oktal   --> Hexa
+         7. Octal   --> Decimal
+         8. Octal   --> Biner
+         9. Octal   --> Hexa
         "
     )
 }
@@ -48,7 +48,7 @@ fn hexa_option() {
         "
         10. Hexa    --> Decimal
         11. Hexa    --> Biner
-        12. Hexa    --> Oktal
+        12. Hexa    --> Octal
         "
     )
 }
