@@ -13,7 +13,7 @@ pub fn read_new() -> String {
     stdout().flush().expect("Failed to flush");
     stdin().read_line(&mut input).expect("Failed to read input");
     
-    input
+    input.trim().to_string()
 }
 
 pub fn str_to_i32(str: String) -> i32 {

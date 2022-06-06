@@ -48,9 +48,19 @@ pub fn dec_to_hex(source: i32) -> String {
 }
 
 pub fn bin_to_dec(source: String) -> String {
-    let mut temp: String = String::new();
-
-    temp
+    let mut n: String = source.clone();
+    let mut i: u32 = 0;
+    let mut temp: i32 = 0;
+    
+    while n.len() > 0 {
+        let current = n.pop().expect("String can't pop(ed)");
+        if current == '1' {
+            temp += i32::pow(2, i);
+        }
+        i += 1;
+    }
+    
+    temp.to_string()
 }
 
 pub fn bin_to_oct(source: String) -> String {
