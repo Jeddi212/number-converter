@@ -106,15 +106,11 @@ pub fn hex_to_dec(source: String) -> String {
 }
 
 pub fn hex_to_bin(source: String) -> String {
-    let mut temp: String = String::new();
-
-    temp
+    dec_to_bin(str_to_i32(hex_to_dec(source)))
 }
 
 pub fn hex_to_oct(source: String) -> String {
-    let mut temp: String = String::new();
-
-    temp
+    dec_to_oct(str_to_i32(hex_to_dec(source)))
 }
 
 fn hex_get_dec(c: char) -> i32 {
@@ -129,12 +125,12 @@ fn hex_get_dec(c: char) -> i32 {
         '7' => 7,
         '8' => 8,
         '9' => 9,
-        'A' => 10,
-        'B' => 11,
-        'C' => 12,
-        'D' => 13,
-        'E' => 14,
-        'F' => 15,
+        'A' | 'a' => 10,
+        'B' | 'b' => 11,
+        'C' | 'c' => 12,
+        'D' | 'd' => 13,
+        'E' | 'e' => 14,
+        'F' | 'f' => 15,
         _ => 0
     }
 }
