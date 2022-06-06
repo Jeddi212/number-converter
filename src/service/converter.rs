@@ -88,9 +88,7 @@ pub fn oct_to_dec(source: String) -> String {
 }
 
 pub fn oct_to_bin(source: String) -> String {
-    let mut temp: String = String::new();
-
-    temp
+    dec_to_bin(str_to_i32(oct_to_dec(source)))
 }
 
 pub fn oct_to_hex(source: String) -> String {

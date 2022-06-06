@@ -37,7 +37,7 @@ fn octal_option() {
     print!(
         "
          7. Octal   --> Decimal
-         8. Octal   --> binary
+         8. Octal   --> Binary
          9. Octal   --> Hexa
         "
     )
