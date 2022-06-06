@@ -14,9 +14,19 @@ pub fn dec_to_bin(source: i32) -> String {
 }
 
 pub fn dec_to_oct(source: i32) -> String {
-    let mut temp: String = String::new();
+    let mut n = source;
+    let mut m: i32;
+    let mut vec_temp: Vec<i32> = Vec::new();
+    while n > 0 {
+        m = n % 8;
+        n /= 8;
+        vec_temp.push(m);
+    }
 
-    temp
+    // iterate over the vector
+    // cast it from i32 to String
+    // reverse the order
+    vec_temp.into_iter().map(|x| x.to_string()).rev().collect()
 }
 
 pub fn dec_to_hex(source: i32) -> String {
