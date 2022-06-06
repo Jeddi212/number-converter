@@ -70,9 +70,7 @@ pub fn bin_to_oct(source: String) -> String {
 }
 
 pub fn bin_to_hex(source: String) -> String {
-    let mut temp: String = String::new();
-
-    temp
+    dec_to_hex(str_to_i32(bin_to_dec(source)))
 }
 
 pub fn oct_to_dec(source: i32) -> String {
@@ -94,9 +92,17 @@ pub fn oct_to_hex(source: i32) -> String {
 }
 
 pub fn hex_to_dec(source: String) -> String {
-    let mut temp: String = String::new();
-
-    temp
+    let mut n: String = source.clone();
+    let mut i: u32 = 0;
+    let mut temp: i32 = 0;
+    
+    while n.len() > 0 {
+        let current = n.pop().expect("String can't pop(ed)");
+        temp += hex_get_dec(current) * i32::pow(16, i);
+        i += 1;
+    }
+    
+    temp.to_string()
 }
 
 pub fn hex_to_bin(source: String) -> String {
@@ -109,6 +115,28 @@ pub fn hex_to_oct(source: String) -> String {
     let mut temp: String = String::new();
 
     temp
+}
+
+fn hex_get_dec(c: char) -> i32 {
+    match c {
+        '0' => 0,
+        '1' => 1,
+        '2' => 2,
+        '3' => 3,
+        '4' => 4,
+        '5' => 5,
+        '6' => 6,
+        '7' => 7,
+        '8' => 8,
+        '9' => 9,
+        'A' => 10,
+        'B' => 11,
+        'C' => 12,
+        'D' => 13,
+        'E' => 14,
+        'F' => 15,
+        _ => 0
+    }
 }
 
 fn get_hex(number: i32) -> char {
